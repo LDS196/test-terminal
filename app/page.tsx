@@ -14,7 +14,7 @@ export default function Home() {
       <Container>
         {items.map((el) => (
           <Item key={el.id}>
-            <Link href={`/payment/${el.value}`}>{el.value}</Link>
+            <Link href={`/payment/${el.id}`}>{el.value}</Link>
           </Item>
         ))}
       </Container>

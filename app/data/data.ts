@@ -1,5 +1,5 @@
 export const items = [
-  { id: 1, value: 'mts' },
-  { id: 2, value: 'megaFon' },
-  { id: 3, value: 'beeline' },
+  { id: 1, value: 'мтс' },
+  { id: 2, value: 'мегафон' },
+  { id: 3, value: 'билайн' },
 ]
