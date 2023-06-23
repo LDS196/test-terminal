@@ -1,4 +1,5 @@
 1.test-terminal-one.vercel.app
+
 2.Задача на рефакторинг
 function func(s, a, b) {
 if (s.length === 0) {
