@@ -17,6 +17,6 @@ export const Item = styled.li`
   border-radius: 5px;
   list-style: none;
   border: 1px solid black;
-  max-width: 200px;
+  max-width: 350px;
   width: 100%;
 `
