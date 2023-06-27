@@ -4,8 +4,7 @@ export const Container = styled.ul`
   display: flex;
   gap: 20px 0;
   flex-direction: column;
-  width: 100%;
-  max-width: 30vw;
+  align-items: center;
 `
 export const Item = styled.li`
   a {
@@ -18,4 +17,6 @@ export const Item = styled.li`
   border-radius: 5px;
   list-style: none;
   border: 1px solid black;
+  max-width: 200px;
+  width: 100%;
 `

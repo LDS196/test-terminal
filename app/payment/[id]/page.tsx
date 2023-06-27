@@ -7,6 +7,7 @@ import { Title } from '@/app/ui/Title'
 import { items } from '@/app/data/data'
 import { Main } from '@/app/ui/Main'
 import { PromiseStatuses } from '@/app/api/api'
+import { Container } from '@/app/style'
 
 type Props = {
   params: {
@@ -22,7 +23,10 @@ export default function Payment({ params: { id } }: Props) {
   return (
     <Main>
       <Title>{operator}</Title>
-      <PaymentForm setPromiseStatus={setPromiseStatus} />
+      <Container>
+        <PaymentForm setPromiseStatus={setPromiseStatus} />
+      </Container>
+
       {promiseStatus === PromiseStatuses.Pending ? null : promiseStatus ===
         PromiseStatuses.Resolved ? (
         <ModalWindowSuccess />
