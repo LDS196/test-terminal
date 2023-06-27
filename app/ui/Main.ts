@@ -6,4 +6,8 @@ export const Main = styled.main`
   align-items: center;
   padding: 5px;
   min-height: 100vh;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 `

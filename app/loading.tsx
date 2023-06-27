@@ -1,3 +1,3 @@
-export default function LoadingPayment(){
+export default function LoadingPayment() {
   return <h1>...Loading</h1>
 }

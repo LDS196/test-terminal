@@ -1,11 +1,10 @@
 'use client'
 import Link from 'next/link'
-import { Title } from '@/app/components/Title'
-import { SubTitle } from '@/app/components/Subtitle'
-import { Container } from '@/app/components/Container'
-import { Item } from '@/app/components/Item'
+import { Title } from '@/app/ui/Title'
+import { SubTitle } from '@/app/ui/Subtitle'
 import { items } from '@/app/data/data'
-import { Main } from '@/app/components/Main'
+import { Main } from '@/app/ui/Main'
+import { Container, Item } from '@/app/style'
 
 export default function Home() {
   return (

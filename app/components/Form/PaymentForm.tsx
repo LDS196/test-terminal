@@ -1,19 +1,18 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import InputMask from 'react-input-mask'
-import { sendData } from '@/app/api/api'
-import { Button } from '@/app/components/Button'
-
-
+import { PromiseStatuses, sendData } from '@/app/api/api'
+import { Button } from '@/app/ui/Button'
+import { InputContainer } from '@/app/components/Form/style'
 
 export type FormData = {
   phone: string
   number: number
 }
 type Props = {
-  setStatus: (value: boolean| null) => void
+  setPromiseStatus: (value: PromiseStatuses) => void
 }
-const PhoneInput = ({ setStatus }: Props) => {
+const PhoneInput = ({ setPromiseStatus }: Props) => {
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
   const {
@@ -27,14 +26,14 @@ const PhoneInput = ({ setStatus }: Props) => {
     setIsLoading(true)
     sendData(data)
       .then((result) => {
-        setStatus(true)
+        setPromiseStatus(PromiseStatuses.Resolved)
         console.log('Resolved:', result)
       })
       .catch((error) => {
-        setStatus(false)
+        setPromiseStatus(PromiseStatuses.Rejected)
         console.log('Rejected:', error.message)
       })
-      .finally(()=> setIsLoading(false))
+      .finally(() => setIsLoading(false))
   }
 
   const handlePhoneBlur = (e: React.FocusEvent<HTMLInputElement>) => {
@@ -52,7 +51,7 @@ const PhoneInput = ({ setStatus }: Props) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className='input-container'>
+      <InputContainer>
         <label htmlFor='phone-input'>Номер телефона</label>
         <InputMask
           id='phone-input'
@@ -68,9 +67,9 @@ const PhoneInput = ({ setStatus }: Props) => {
           onBlur={handlePhoneBlur}
         />
         <div className='error-message'>{errors.phone && <span>{errors.phone.message}</span>}</div>
-      </div>
+      </InputContainer>
 
-      <div className='input-container'>
+      <InputContainer>
         <label htmlFor='number-input'>Сумма</label>
         <input
           type='number'
@@ -90,9 +89,11 @@ const PhoneInput = ({ setStatus }: Props) => {
           onChange={handleNumberChange}
         />
         <div className='error-message'>{errors.number && <span>{errors.number.message}</span>}</div>
-      </div>
+      </InputContainer>
 
-      <Button disabled={isLoading} type='submit'>Оплатить</Button>
+      <Button disabled={isLoading} type='submit'>
+        Оплатить
+      </Button>
     </form>
   )
 }
