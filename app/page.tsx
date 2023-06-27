@@ -5,10 +5,11 @@ import { SubTitle } from '@/app/components/Subtitle'
 import { Container } from '@/app/components/Container'
 import { Item } from '@/app/components/Item'
 import { items } from '@/app/data/data'
+import { Main } from '@/app/components/Main'
 
 export default function Home() {
   return (
-    <>
+    <Main>
       <Title>Терминал оплаты</Title>
       <SubTitle>Выберите оператора</SubTitle>
       <Container>
@@ -18,6 +19,6 @@ export default function Home() {
           </Item>
         ))}
       </Container>
-    </>
+    </Main>
   )
 }

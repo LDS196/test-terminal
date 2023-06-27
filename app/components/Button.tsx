@@ -8,4 +8,9 @@ export const Button = styled.button`
   background-color: green;
   padding: 10px;
   text-transform: uppercase;
+  max-width: 120px;
+  width: 100%;
+  @media screen and (max-width: 125px) {
+    font-size: 10vw;
+  }
 `
