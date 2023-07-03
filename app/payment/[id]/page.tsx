@@ -15,10 +15,21 @@ type Props = {
   }
 }
 export default function Payment({ params: { id } }: Props) {
-  const [promiseStatus, setPromiseStatus] = useState<PromiseStatuses>(PromiseStatuses.Pending)
+  const [promiseStatus, setPromiseStatus] = useState(PromiseStatuses.Pending)
 
   const index = Number(id) - 1
   const operator = items[index].value
+
+  const modalWindow = (() => {
+    switch (promiseStatus) {
+      case PromiseStatuses.Resolved:
+        return <ModalWindowSuccess />
+      case PromiseStatuses.Rejected:
+        return <ModalWindowError setPromiseStatus={setPromiseStatus} />
+      default:
+        return null
+    }
+  })()
 
   return (
     <Main>
@@ -26,13 +37,7 @@ export default function Payment({ params: { id } }: Props) {
       <Container>
         <PaymentForm setPromiseStatus={setPromiseStatus} />
       </Container>
-
-      {promiseStatus === PromiseStatuses.Pending ? null : promiseStatus ===
-        PromiseStatuses.Resolved ? (
-        <ModalWindowSuccess />
-      ) : (
-        <ModalWindowError setPromiseStatus={setPromiseStatus} />
-      )}
+      {modalWindow}
     </Main>
   )
 }
