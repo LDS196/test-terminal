@@ -15,10 +15,10 @@ type Props = {
   }
 }
 export default function Payment({ params: { id } }: Props) {
+
   const [promiseStatus, setPromiseStatus] = useState(PromiseStatuses.Pending)
 
-  const index = Number(id) - 1
-  const operator = items[index].value
+  const operator = (items.find(item=> item.id===id)?.value)
 
   const modalWindow = (() => {
     switch (promiseStatus) {
