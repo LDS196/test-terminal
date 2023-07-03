@@ -10,9 +10,15 @@ export const Item = styled.li`
   a {
     display: block;
     text-transform: uppercase;
-    font-size: 3vw;
+    font-size: 22px;
     padding: 5px;
     text-align: center;
+    @media screen and (max-width: 768px){
+      font-size: 18px;
+    }
+    @media screen and (max-width: 460px){
+      font-size: 16px;
+    }
   }
   border-radius: 5px;
   list-style: none;

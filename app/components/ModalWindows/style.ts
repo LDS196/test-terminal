@@ -21,6 +21,7 @@ export const ModalWindow = styled.div`
       transform-origin: 50% 0;
     }
   }
+  margin: 0 5px;
   background: #ffffff;
   padding: 32px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);

@@ -10,7 +10,4 @@ export const Button = styled.button`
   text-transform: uppercase;
   max-width: 120px;
   width: 100%;
-  @media screen and (max-width: 125px) {
-    font-size: 10vw;
-  }
 `

@@ -14,6 +14,10 @@ export const InputContainer = styled.div`
     padding: 17px;
     border: 1px solid rgba(0, 0, 0, 0.16);
     border-radius: 4px;
+    @media screen and (max-width: 460px){
+      height: 30px;
+      padding: 10px;
+    }
   }
   input:hover {
     outline: none;
@@ -32,9 +36,12 @@ export const InputContainer = styled.div`
     -moz-appearance: textfield;
   }
   .error-message {
-    height: 16px;
+    min-height: 16px;
     display: block;
     color: red;
     margin-bottom: 20px;
+    @media screen and (max-width: 460px){
+     font-size: 12px;
+    }
   }
 `
