@@ -7,7 +7,6 @@ import { Title } from '@/app/ui/Title'
 import { items } from '@/app/data/data'
 import { Main } from '@/app/ui/Main'
 import { PromiseStatuses } from '@/app/api/api'
-import { Container } from '@/app/style'
 
 type Props = {
   params: {
@@ -15,10 +14,9 @@ type Props = {
   }
 }
 export default function Payment({ params: { id } }: Props) {
-
   const [promiseStatus, setPromiseStatus] = useState(PromiseStatuses.Pending)
 
-  const operator = (items.find(item=> item.id===id)?.value)
+  const operator = items.find((item) => item.id === id)?.value
 
   const modalWindow = (() => {
     switch (promiseStatus) {
@@ -34,9 +32,7 @@ export default function Payment({ params: { id } }: Props) {
   return (
     <Main>
       <Title>{operator}</Title>
-      <Container>
-        <PaymentForm setPromiseStatus={setPromiseStatus} />
-      </Container>
+      <PaymentForm setPromiseStatus={setPromiseStatus} />
       {modalWindow}
     </Main>
   )

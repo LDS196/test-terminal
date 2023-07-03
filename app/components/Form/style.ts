@@ -1,5 +1,9 @@
 import styled from 'styled-components'
-
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
 export const InputContainer = styled.div`
   margin-bottom: 20px;
   width: 100%;
@@ -14,7 +18,7 @@ export const InputContainer = styled.div`
     padding: 17px;
     border: 1px solid rgba(0, 0, 0, 0.16);
     border-radius: 4px;
-    @media screen and (max-width: 460px){
+    @media screen and (max-width: 460px) {
       height: 30px;
       padding: 10px;
     }
@@ -40,8 +44,8 @@ export const InputContainer = styled.div`
     display: block;
     color: red;
     margin-bottom: 20px;
-    @media screen and (max-width: 460px){
-     font-size: 12px;
+    @media screen and (max-width: 460px) {
+      font-size: 12px;
     }
   }
 `

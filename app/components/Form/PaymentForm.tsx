@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import InputMask from 'react-input-mask'
 import { PromiseStatuses, sendData } from '@/app/api/api'
 import { Button } from '@/app/ui/Button'
-import { InputContainer } from '@/app/components/Form/style'
+import { Form, InputContainer } from '@/app/components/Form/style'
 
 export type FormData = {
   phone: string
@@ -50,7 +50,7 @@ const PhoneInput = ({ setPromiseStatus }: Props) => {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <Form onSubmit={handleSubmit(onSubmit)}>
       <InputContainer>
         <label htmlFor='phone-input'>Номер телефона</label>
         <InputMask
@@ -94,7 +94,7 @@ const PhoneInput = ({ setPromiseStatus }: Props) => {
       <Button disabled={isLoading} type='submit'>
         Оплатить
       </Button>
-    </form>
+    </Form>
   )
 }
 
